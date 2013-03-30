@@ -752,7 +752,7 @@ static inline NSAttributedString * NSAttributedStringBySettingColorFromContext(N
                 
                 CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)self.font.fontName, self.font.pointSize, NULL);
                 CGContextSetLineWidth(c, CTFontGetUnderlineThickness(font));
-                CGFloat y = roundf(runBounds.origin.y + runBounds.size.height / 2.0f);
+                CGFloat y = roundf(runBounds.origin.y + runBounds.size.height / 2.0f) - self.font.pointSize / 2.0;
                 CGContextMoveToPoint(c, runBounds.origin.x, y);
                 CGContextAddLineToPoint(c, runBounds.origin.x + runBounds.size.width, y);
                 
